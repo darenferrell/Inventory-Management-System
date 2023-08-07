@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="679.0" prefWidth="936.0" style="-fx-background-insets: 10;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ferrell.softwareproject.AddProductController">
+   <children>
+      <AnchorPane fx:id="addProductScreen" prefHeight="679.0" prefWidth="942.0" style="-fx-border-radius: 10; -fx-border-color: black;">
+         <children>
+            <Label fx:id="addProductLbl" layoutX="32.0" layoutY="51.0" text="Add Product">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="productIdLbl" layoutX="54.0" layoutY="146.0" text="ID" />
+            <Label fx:id="nameLbl" layoutX="46.0" layoutY="192.0" text="Name" />
+            <Label fx:id="invLbl" layoutX="46.0" layoutY="237.0" text="Inv" />
+            <Label fx:id="priceLbl" layoutX="46.0" layoutY="281.0" text="Price" />
+            <Label fx:id="maxLbl" layoutX="46.0" layoutY="324.0" text="Max" />
+            <Label fx:id="minLbl" layoutX="205.0" layoutY="324.0" text="Min" />
+            <Button fx:id="removeBtn" layoutX="670.0" layoutY="599.0" mnemonicParsing="false" onAction="#deleteProductAction" prefHeight="26.0" prefWidth="150.0" text="Remove Associated Part" />
+            <Button fx:id="addBtn" layoutX="700.0" layoutY="320.0" mnemonicParsing="false" onAction="#addProductAction" text="Add" />
+            <Button fx:id="cancelBtn" layoutX="762.0" layoutY="635.0" mnemonicParsing="false" onAction="#cancelProductAction" text="Cancel" />
+            <Button fx:id="saveBtn" layoutX="679.0" layoutY="635.0" mnemonicParsing="false" onAction="#saveProductAction" text="Save" />
+            <TextField fx:id="addProductTxt" layoutX="95.0" layoutY="142.0" promptText="Auto Gen - Disabled" />
+            <TextField fx:id="addNameTxt" layoutX="95.0" layoutY="188.0" />
+            <TextField fx:id="addStockTxt" layoutX="95.0" layoutY="232.0" prefHeight="26.0" prefWidth="87.0" />
+            <TextField fx:id="addPriceTxt" layoutX="95.0" layoutY="276.0" prefHeight="26.0" prefWidth="87.0" />
+            <TextField fx:id="addMaxTxt" layoutX="95.0" layoutY="319.0" prefHeight="26.0" prefWidth="87.0" />
+            <TextField fx:id="addMinTxt" layoutX="252.0" layoutY="319.0" prefHeight="26.0" prefWidth="87.0" />
+            <TextField fx:id="productSearchTxt" layoutX="570.0" layoutY="46.0" onAction="#productSearchAction" prefHeight="26.0" prefWidth="218.0" promptText="Search by Part ID or Part Name." />
+            <TableView fx:id="partsTableView" layoutX="434.0" layoutY="92.0" prefHeight="200.0" prefWidth="406.0">
+              <columns>
+                <TableColumn fx:id="partIdCol" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="partNameCol" prefWidth="88.79998779296875" text="Part Name" />
+                  <TableColumn fx:id="partStockCol" prefWidth="109.60009765625" text="Inventory Level" />
+                  <TableColumn fx:id="partPriceCol" prefWidth="131.199951171875" text="Price/Cost Per Unit" />
+              </columns>
+            </TableView>
+            <TableView fx:id="associatedPartsTableView" layoutX="434.0" layoutY="368.0" prefHeight="200.0" prefWidth="406.0">
+               <columns>
+                  <TableColumn fx:id="associatedPartIdCol" prefWidth="75.0" text="Part ID" />
+                  <TableColumn fx:id="associatedPartNameCol" prefWidth="88.79998779296875" text="Part Name" />
+                  <TableColumn fx:id="associatedPartStockCol" prefWidth="109.60009765625" text="Inventory Level" />
+                  <TableColumn fx:id="associatedPartPriceCol" prefWidth="131.199951171875" text="Price/Cost Per Unit" />
+               </columns>
+            </TableView>
+         </children>
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </AnchorPane>
+   </children>
+</AnchorPane>
